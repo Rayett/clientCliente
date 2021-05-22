@@ -7,52 +7,75 @@
             <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
             AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
             <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
                 <Label Text="LOG IN" 
                 Margin="45,65,45,0"
                 TextColor="White" 
                 FontSize="65"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Center"/>
-
+                
+                
                 <AbsoluteLayout>
                     <Label x:Name="displayError" IsVisible="false" 
                     Text="Credenziali sbagliate"
                     WidthRequest="200"
-                    Margin="0,20,0,0"
+                    Margin="0,10,0,0"
                     TextColor="OrangeRed" 
                     FontSize="20"
                     VerticalTextAlignment="Center"
                     HorizontalTextAlignment="Center"/>
                 </AbsoluteLayout>
 
+                <Label x:Name="signUp"
+                    Text="Sign up"
+                    Margin = "0,10, 70,0"
+                    TextColor="DodgerBlue" 
+                    FontSize="20" 
+                           
+                    HorizontalTextAlignment = "End" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="signUpTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
                 <Label Text="Nome" 
-                Margin="80,30,0,0 "
+                Margin="80,0,0,0 "
                 TextColor="White" 
                 FontSize="20"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Start"/>
                 <Entry x:Name="nome"  Placeholder="Nome" HorizontalTextAlignment="Start" Margin="80,10"/>
 
+                <Label Text="Cognome" 
+                Margin="80,20,0,0 "
+                TextColor="White" 
+                FontSize="20"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Start"/>
+                <Entry x:Name="cognome"  Placeholder="Cognome" HorizontalTextAlignment="Start" Margin="80,10"/>
+
                 <Label Text="Password" 
-                Margin="80,15,0,0"
+                Margin="80,20,0,0"
                 TextColor="White" 
                 FontSize="20"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Start"/>
                 <Entry x:Name="password" IsPassword="True" Placeholder="Password" Margin="80,10"/>
 
+                
                 <Frame HorizontalOptions="Fill" 
                 x:Name="LogInB"
                 VerticalOptions="Center"
                 HeightRequest="25"
-                       Margin="70,25"
+                       Margin="70,20"
                 BackgroundColor="#FF6262"
                 BorderColor="Black"
                 CornerRadius="23">
 
-                    <!-- <Frame.GestureRecognizers>
+                    <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="logInTapped" />
-                    </Frame.GestureRecognizers>-->
+                    </Frame.GestureRecognizers>
 
                     <Label Text="LOG IN" 
                     MinimumHeightRequest ="25"

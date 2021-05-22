@@ -85,13 +85,13 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\clientCliente\clientCliente.csproj">
       <Project>{DE3D7072-5A23-4DC7-AE5B-18DA3EA07C6C}</Project>
       <Name>clientCliente</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\bg.jpg" />
   </ItemGroup>

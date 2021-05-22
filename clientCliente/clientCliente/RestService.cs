@@ -20,7 +20,7 @@ namespace clientCliente
             string y = DateTime.Today.Year.ToString();
             uri = "https://" + d + "-" + m + "-" + y + "-servicePorti.loca.lt";
             client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("peinpeko", "1.0"));
-            uri = "https://modern-skunk-53.loca.lt";
+            uri = "https://calm-starfish-75.loca.lt";
             Console.WriteLine(uri);
         }
 
@@ -56,7 +56,7 @@ namespace clientCliente
             try
             {
                 StringContent content = new StringContent(body, Encoding.UTF8, "application/json");
-                response = await client.PostAsync(uri, content);
+                response = await client.PostAsync(uri, content).ConfigureAwait(false); ;
             }
             catch (Exception ex)
             {
