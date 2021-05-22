@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="clientCliente.MainPage">
+
+    <AbsoluteLayout>
+        <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
+            AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+
+            <Label Text="CHI SEI?" 
+                Margin="45,120,45,0"
+ 
+                TextColor="White" 
+                FontSize="65"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+
+
+            <Frame HorizontalOptions="Fill" 
+            x:Name="ClienteB"
+            VerticalOptions="Center"
+            HeightRequest="40"
+            Margin="45,55,45,0"
+            BackgroundColor="#FF6262"
+            BorderColor="Black"
+            CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="clienteTapped" />
+                    </Frame.GestureRecognizers>
+
+                <Label Text="CLIENTE" 
+                TextColor="White" 
+                FontSize="Large"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+            </Frame>
+
+            <Frame HorizontalOptions="Fill" 
+            x:Name="FornitoreB"
+            VerticalOptions="Center"
+            HeightRequest="40"
+            Margin="45,25,45,0"
+            BackgroundColor="#FF6262"
+            BorderColor="Black"
+            CornerRadius="23">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="fornitoreTapped"/>
+                </Frame.GestureRecognizers>
+
+                <Label Text="FORNITORE" 
+                TextColor="White" 
+                FontSize="Large"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+            </Frame>
+
+            <Frame HorizontalOptions="Fill" 
+            x:Name="OperatoreB"
+            VerticalOptions="Center"
+            HeightRequest="40"
+            Margin="45,25,45,0"
+            BackgroundColor="#FF6262"
+            BorderColor="Black"
+            CornerRadius="23">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="operatoreTapped"/>
+                </Frame.GestureRecognizers>
+
+                <Label Text="OPERATORE INTERNO" 
+                TextColor="White" 
+                FontSize="Large"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+            </Frame>
+
+            <Frame HorizontalOptions="Fill" 
+            x:Name="AutotrasportatoreB"
+            VerticalOptions="Center"
+            HeightRequest="40"
+            Margin="45,25,45,0"
+            BackgroundColor="#FF6262"
+            BorderColor="Black"
+            CornerRadius="23">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="autotrasportatoreTapped"/>
+                </Frame.GestureRecognizers>
+
+                <Label Text="AUTOTRASPORTATORE" 
+                TextColor="White" 
+                FontSize="Large"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+            </Frame>
+        </StackLayout>
+    </AbsoluteLayout>
+
+</ContentPage>
