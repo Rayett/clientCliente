@@ -20,7 +20,7 @@ namespace clientCliente
             string y = DateTime.Today.Year.ToString();
             uri = "https://" + d + "-" + m + "-" + y + "-servicePorti.loca.lt";
             client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("peinpeko", "1.0"));
-            uri = "https://rude-deer-38.loca.lt";
+            //uri = "https://rare-kangaroo-49.loca.lt";
             Console.WriteLine(uri);
         }
 
@@ -70,6 +70,29 @@ namespace clientCliente
             {
                 return test;
             }
+            return ("204");
+        }
+
+        public static async Task<string> delete(string addURL) //GET
+        {
+            HttpResponseMessage response = null;
+            String appUri = uri + addURL;
+            try
+            {
+                Console.WriteLine("\n\nhalp me = " + uri + "\n\n");
+                response = await client.DeleteAsync(appUri).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\tERROR {0}", ex.Message);
+            }
+            string test = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("success");
+                return test;
+            }
+            Console.WriteLine("failed");
             return ("204");
         }
     }

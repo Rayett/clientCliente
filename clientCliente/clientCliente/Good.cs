@@ -10,8 +10,9 @@ namespace clientCliente
         public int FKFornitore;
         public String tipo;
         public float costo;
+        public int available;
 
-        private Good()
+        public Good()
         {
         }
     }
