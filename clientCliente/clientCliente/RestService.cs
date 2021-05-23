@@ -20,7 +20,7 @@ namespace clientCliente
             string y = DateTime.Today.Year.ToString();
             uri = "https://" + d + "-" + m + "-" + y + "-servicePorti.loca.lt";
             client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("peinpeko", "1.0"));
-            uri = "https://dangerous-shrimp-34.loca.lt";
+            uri = "https://rude-deer-38.loca.lt";
             Console.WriteLine(uri);
         }
 
