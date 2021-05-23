@@ -22,7 +22,7 @@
             x:Name="ClienteB"
             VerticalOptions="Center"
             HeightRequest="40"
-            Margin="45,55,45,0"
+            Margin="45,25,45,0"
             BackgroundColor="#FF6262"
             BorderColor="Black"
             CornerRadius="23">

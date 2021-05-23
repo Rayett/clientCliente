@@ -21,7 +21,7 @@ namespace clientCliente
 
         private void logInTapped(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(nome.Text) || String.IsNullOrWhiteSpace(password.Text))
+            if (String.IsNullOrWhiteSpace(nome.Text) || String.IsNullOrWhiteSpace(password.Text) || String.IsNullOrWhiteSpace(cognome.Text))
             {
                 displayError.Margin = new Thickness((width - 200) / 2, 10, (width - 200) / 2, 0);
                 displayError.Text = "Compilare i campi";

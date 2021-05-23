@@ -3,10 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="clientCliente.mainAutotrasportatore">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout>
+            <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
+            AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Frame HorizontalOptions="Fill" 
+                x:Name="viaggioB"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                Margin="45,0,45,0"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="viaggioTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="RITIRA PACCHI" 
+                    TextColor="White" 
+                    FontSize="Large"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <Frame HorizontalOptions="Fill" 
+                x:Name="camionB"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                Margin="45,25,45,0"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="camionTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="REGISTRA CAMION" 
+                    TextColor="White" 
+                    FontSize="Large"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

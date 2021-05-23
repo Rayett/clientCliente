@@ -20,18 +20,18 @@ namespace clientCliente
             string y = DateTime.Today.Year.ToString();
             uri = "https://" + d + "-" + m + "-" + y + "-servicePorti.loca.lt";
             client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("peinpeko", "1.0"));
-            uri = "https://calm-starfish-75.loca.lt";
+            uri = "https://dangerous-shrimp-34.loca.lt";
             Console.WriteLine(uri);
         }
 
         public static async Task<string> get(string addURL) //GET
         {
             HttpResponseMessage response = null;
-            uri += addURL;
+            String appUri = uri + addURL;
             try
             {
                 Console.WriteLine("\n\nhalp me = " + uri + "\n\n");
-                response = await client.GetAsync(uri).ConfigureAwait(false);
+                response = await client.GetAsync(appUri).ConfigureAwait(false);
             }
             catch (Exception ex)
             {            
@@ -52,11 +52,14 @@ namespace clientCliente
         public static async Task<string> post(string addURL, string body) //POST
         {
             HttpResponseMessage response = null;
-            uri += addURL;
+            String appUri = uri + addURL;
             try
             {
-                StringContent content = new StringContent(body, Encoding.UTF8, "application/json");
-                response = await client.PostAsync(uri, content).ConfigureAwait(false); ;
+                Console.WriteLine("\n\n pog " + body);
+                StringContent content = new StringContent(body, Encoding.UTF8, "text/plain");
+                string myContent = await content.ReadAsStringAsync();
+                Console.WriteLine("\n\n pogger " + myContent);
+                response = await client.PostAsync(appUri, content).ConfigureAwait(false);
             }
             catch (Exception ex)
             {

@@ -16,13 +16,14 @@ namespace clientCliente
         public signUp()
         {
             InitializeComponent();
+            width = Application.Current.MainPage.Width;
         }
 
         private void signUpTapped(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(nome.Text) || String.IsNullOrWhiteSpace(password.Text))
+            if (String.IsNullOrWhiteSpace(nome.Text) || String.IsNullOrWhiteSpace(password.Text) || String.IsNullOrWhiteSpace(cognome.Text) || String.IsNullOrWhiteSpace(RipPassword.Text))
             {
-                displayError.Margin = new Thickness((width - 200) / 2, 0, (width - 200) / 2, 0);
+                displayError.Margin = new Thickness((width - 300) / 2, 10, (width - 300) / 2, 0);
                 displayError.Text = "Compilare i campi";
                 displayError.IsVisible = true;
             }
@@ -30,21 +31,31 @@ namespace clientCliente
             {
                 string app;
                 displayError.IsVisible = false;
-                Task<string> task = RestService.post("/signup?type=cliente", "{'name'='" + nome.Text + "','surname'='" + cognome.Text + "','password'='" + password.Text+"'}");
-                Console.WriteLine("\n\nbased " + task.Result);
-                if (task.Result == "err 204")
+                if (password.Text == RipPassword.Text)
                 {
-                    displayError.Margin = new Thickness((width - 200) / 2, 10, (width - 200) / 2, 0);
-                    displayError.Text = "Utente già esistente";
-                    displayError.IsVisible = true;
+                    app = "{\"name\":\"" + nome.Text + "\",\"surname\":\"" + cognome.Text + "\",\"password\":\"" + password.Text + "\"}";
+                    Task<string> task = RestService.post("/signup?type=cliente", app);
+                    Console.WriteLine("\n\nbased " + task.Result);
+                    if (task.Result == "err 204")
+                    {
+                        displayError.Margin = new Thickness((width - 300) / 2, 10, (width - 300) / 2, 0);
+                        displayError.Text = "Utente già esistente";
+                        displayError.IsVisible = true;
+                    }
+                    else
+                    {
+                        task = RestService.get("/login?type=cliente&name=" + nome.Text + "&surname=" + cognome.Text + "&password=" + password.Text);
+
+                        Misc.id = Convert.ToInt32(task.Result);
+                        Console.WriteLine("id = " + Misc.id);
+                        Navigation.PushAsync(new mainCliente());
+                    }
                 }
                 else
                 {
-                    task = RestService.get("/login?type=cliente&name=" + nome.Text + "&surname=" + cognome.Text + "&password=" + password.Text);
-
-                    Misc.id = Convert.ToInt32(task.Result);
-                    Console.WriteLine("id = " + Misc.id);
-                    Navigation.PushAsync(new mainCliente());
+                    displayError.Margin = new Thickness((width - 300) / 2, 10, (width - 300) / 2, 0);
+                    displayError.Text = "Campi password diversi";
+                    displayError.IsVisible = true;
                 }
 
             }
