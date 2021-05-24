@@ -3,10 +3,90 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="clientCliente.mainOperatore">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout>
+            <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
+            AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Frame HorizontalOptions="Fill" 
+                x:Name="B1"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                Margin="45,150,45,0"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="shipDockedTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="NAVE APPRODATA" 
+                    TextColor="White" 
+                    FontSize="Large"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <Frame HorizontalOptions="Fill" 
+                x:Name="B2"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                Margin="45,25,45,0"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="newViaggioTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="NUOVO VIAGGIO" 
+                    TextColor="White" 
+                    FontSize="Large"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <Frame HorizontalOptions="Fill" 
+                x:Name="B3"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                Margin="45,25,45,0"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="NewuserTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="REGISTRA UTENTE" 
+                    TextColor="White" 
+                    FontSize="Large"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <Frame HorizontalOptions="Fill" 
+                x:Name="B4"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                Margin="45,25,45,0"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="NewShipTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="REGISTRA NAVE" 
+                    TextColor="White" 
+                    FontSize="Large"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

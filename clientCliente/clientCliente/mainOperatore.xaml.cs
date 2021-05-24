@@ -16,5 +16,25 @@ namespace clientCliente
         {
             InitializeComponent();
         }
+
+        private void shipDockedTapped(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync();
+        }
+
+        private void newViaggioTapped(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync();
+        }
+
+        private void NewuserTapped(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync();
+        }
+
+        private void NewShipTapped(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync();
+        }
     }
 }

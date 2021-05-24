@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="clientCliente.newMerch">
+             x:Class="clientCliente.packStart">
     <ContentPage.Content>
         <AbsoluteLayout>
             <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
@@ -19,24 +19,34 @@
                     HorizontalTextAlignment="Center"/>
                 </AbsoluteLayout>
 
-                <Label Text="Nome merce" 
+                <Label Text="Porto di partenza:" 
                 Margin="80,10,0,0 "
                 TextColor="White" 
                 FontSize="20"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Start"/>
-                <Entry x:Name="name"  Placeholder="Nome" HorizontalTextAlignment="Start" Margin="80,10"/>
 
-                <Label Text="Prezzo" 
+                <Label Text="Stato" 
                 Margin="80,10,0,0 "
                 TextColor="White" 
                 FontSize="20"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Start"/>
-                <Entry x:Name="cost"  Placeholder="Prezzo" HorizontalTextAlignment="Start" Margin="80,10"/>
+                <Entry x:Name="state"  Placeholder="Stato" HorizontalTextAlignment="Start" Margin="80,10"/>
 
+                <Label Text="Città" 
+                Margin="80,20,0,0 "
+                TextColor="White" 
+                FontSize="20"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Start"/>
+                <Entry x:Name="city"  Placeholder="Città" HorizontalTextAlignment="Start" Margin="80,10"/>
+
+                <StackLayout x:Name="infoDestination">
+                </StackLayout>
+                
                 <Frame HorizontalOptions="Fill" 
-                x:Name="newGoodB"
+                x:Name="setPortoEndB"
                 VerticalOptions="Center"
                 HeightRequest="25"
                        Margin="70,20"
@@ -45,7 +55,7 @@
                 CornerRadius="23">
 
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="newGoodTapped" />
+                        <TapGestureRecognizer Tapped="setDestinationTapped" />
                     </Frame.GestureRecognizers>
 
                     <Label Text="CONFERMA" 

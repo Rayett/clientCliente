@@ -31,7 +31,8 @@ namespace clientCliente
             {
                 string app;
                 displayError.IsVisible = false;
-                string data = DateTime.Today.Year.ToString() + '-' + DateTime.Today.Month.ToString() + '-' + DateTime.Today.Day.ToString() + ' ' + DateTime.Now.Hour.ToString() + ':' + DateTime.Now.Minute.ToString() + ':' + DateTime.Now.Second.ToString();
+                DateTime dateTime = DateTime.UtcNow;
+                string data = dateTime.Year.ToString() + '-' + dateTime.Month.ToString() + '-' + dateTime.Day.ToString() + ' ' + dateTime.Hour.ToString() + ':' + dateTime.Minute.ToString() + ':' + dateTime.Second.ToString();
                 app = "{\"plate\":\"" + targa.Text + "\",\"brand\":\"" + marca.Text + "\",\"model\":\"" + modello.Text + "\",\"idDriver\":" + Misc.id + ",\"date\":\"" + data + "\"}";
                 Console.WriteLine(app);
                 Task<string> task = RestService.post("/viaggio_camion", app);
