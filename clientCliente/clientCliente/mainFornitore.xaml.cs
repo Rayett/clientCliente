@@ -82,7 +82,12 @@ namespace clientCliente
 
         private void pendingPacksTapped(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new pendingPacks());
+        }
 
+        private void AddMerchTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new newMerch());
         }
     }
 }
