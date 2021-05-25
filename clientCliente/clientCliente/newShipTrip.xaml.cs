@@ -60,7 +60,7 @@ namespace clientCliente
 
         private void suff(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new PacksOntrip(Ships[buttons.IndexOf((Button)sender)].idnave));
+            Navigation.PushAsync(new infoShipTrip(Ships[buttons.IndexOf((Button)sender)].idnave));
             ShipsInPort.Children.Clear();
             Ships.Remove(Ships[buttons.IndexOf((Button)sender)]);
             buttons.Remove(buttons[buttons.IndexOf((Button)sender)]);
