@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="clientCliente.RetireShip">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
+            AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+                <AbsoluteLayout>
+                    <Label x:Name="displayError" IsVisible="false" 
+                    Text="Credenziali sbagliate"
+                    WidthRequest="300"
+                    Margin="0,70,0,0"
+                    TextColor="OrangeRed" 
+                    FontSize="20"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </AbsoluteLayout>
+
+                <Label Text="ID nave (nome#10)" 
+                Margin="80,10,0,0 "
+                TextColor="White" 
+                FontSize="20"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Start"/>
+                <Entry x:Name="idNave"  Placeholder="ID" HorizontalTextAlignment="Start" Margin="80,10"/>
+
+                <Frame HorizontalOptions="Fill" 
+                x:Name="ritiraPaccoB"
+                VerticalOptions="Center"
+                HeightRequest="25"
+                       Margin="70,20"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ritiraNaveTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="CONFERMA" 
+                    MinimumHeightRequest ="25"
+                    TextColor="White" 
+                    FontSize="20"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

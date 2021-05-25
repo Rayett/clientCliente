@@ -15,6 +15,8 @@ namespace clientCliente
         public mainOperatore()
         {
             InitializeComponent();
+            Task<string> task = RestService.get("/portoByOp?idpacco=" + Misc.id);
+            Operator.idPorto = Convert.ToInt32(task.Result);
         }
 
         private void shipDockedTapped(object sender, EventArgs e)
@@ -24,7 +26,7 @@ namespace clientCliente
 
         private void newViaggioTapped(object sender, EventArgs e)
         {
-            //Navigation.PushAsync();
+            Navigation.PushAsync(new newShipTrip());
         }
 
         private void NewuserTapped(object sender, EventArgs e)
@@ -34,7 +36,12 @@ namespace clientCliente
 
         private void NewShipTapped(object sender, EventArgs e)
         {
-            //Navigation.PushAsync();
+            Navigation.PushAsync(new newShip());
+        }
+
+        private void RetireShipTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RetireShip());
         }
     }
 }

@@ -11,7 +11,7 @@
                 x:Name="B1"
                 VerticalOptions="Center"
                 HeightRequest="40"
-                Margin="45,150,45,0"
+                Margin="45,100,45,0"
                 BackgroundColor="#FF6262"
                 BorderColor="Black"
                 CornerRadius="23">
@@ -81,6 +81,26 @@
                     </Frame.GestureRecognizers>
 
                     <Label Text="REGISTRA NAVE" 
+                    TextColor="White" 
+                    FontSize="Large"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <Frame HorizontalOptions="Fill" 
+                x:Name="B5"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                Margin="45,25,45,0"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RetireShipTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="RITIRA NAVE" 
                     TextColor="White" 
                     FontSize="Large"
                     VerticalTextAlignment="Center"

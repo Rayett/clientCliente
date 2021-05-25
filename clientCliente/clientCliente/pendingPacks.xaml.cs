@@ -110,7 +110,6 @@ namespace clientCliente
                     HorizontalOptions = LayoutOptions.End,
                     HeightRequest = 37,
                 };
-                buttons.Add(button);
                 button.Clicked += suff;
                 mainGridLayout.Children.Add(label, 0, i);
                 mainGridLayout.Children.Add(button, 1, i);
