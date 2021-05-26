@@ -21,7 +21,7 @@ namespace clientCliente
 
         private void shipDockedTapped(object sender, EventArgs e)
         {
-            //Navigation.PushAsync();
+            Navigation.PushAsync( new shipDocked());
         }
 
         private void newViaggioTapped(object sender, EventArgs e)
@@ -42,6 +42,11 @@ namespace clientCliente
         private void RetireShipTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new RetireShip());
+        }
+
+        private void DelAccount(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new delAccount());
         }
     }
 }

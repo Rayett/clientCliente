@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="clientCliente.delAccount">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
+            AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+                <AbsoluteLayout>
+                    <Label x:Name="displayError" IsVisible="false" 
+                    Text="Credenziali sbagliate"
+                    WidthRequest="300"
+                    Margin="0,70,0,0"
+                    TextColor="OrangeRed" 
+                    FontSize="20"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </AbsoluteLayout>
+
+
+                <Label Text="Tipo" 
+                Margin="80,40,0,0 "
+                TextColor="White" 
+                FontSize="20"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Start"/>
+                <Picker x:Name="user" SelectedIndex="0" SelectedIndexChanged="userChanged"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        WidthRequest="150"
+                        Margin="80,10,0,0 ">
+                    <Picker.Items>
+                        <x:String>FORNITORE</x:String>
+                        <x:String>OPERATORE</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Nome" 
+                Margin="80,20,0,0 "
+                TextColor="White" 
+                FontSize="20"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Start"/>
+                <Entry x:Name="nome"  Placeholder="Nome" HorizontalTextAlignment="Start" Margin="80,10"/>
+
+                <StackLayout x:Name="opSurname">
+                </StackLayout>
+
+                <Frame HorizontalOptions="Fill" 
+                x:Name="delAccounttapped"
+                VerticalOptions="Center"
+                HeightRequest="25"
+                       Margin="70,20"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="delAccountTapped" />
+                    </Frame.GestureRecognizers>
+
+                    <Label Text="AVANTI" 
+                    MinimumHeightRequest ="25"
+                    TextColor="White" 
+                    FontSize="20"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+                </Frame>
+
+
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

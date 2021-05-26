@@ -34,7 +34,6 @@ namespace clientCliente
                 string app;
                 displayError.IsVisible = false;
                 Task<string> task = RestService.get("/route?idStart="+ Operator.idPorto +"&state="+ state.Text +"&city="+ city.Text);
-                Console.WriteLine("tsk = " + task.Result);
                 if (task.Result == "err 204")
                 {
                     displayError.Margin = new Thickness((width - 300) / 2, 70, (width - 300) / 2, 0);

@@ -75,7 +75,7 @@ namespace clientCliente
             Navigation.PushAsync(new packStart(PPacks[buttons.IndexOf((Button)sender)].idpacco, PPacks[buttons.IndexOf((Button)sender)].stato, PPacks[buttons.IndexOf((Button)sender)].citta));
             mainGridLayout.Children.Clear();
             PPacks.Remove(PPacks[buttons.IndexOf((Button)sender)]);
-            buttons.Remove(buttons[buttons.IndexOf((Button)sender)]);
+            buttons.Clear();
             CreateALreadyExisting();
         }
 

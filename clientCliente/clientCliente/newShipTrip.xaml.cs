@@ -63,7 +63,7 @@ namespace clientCliente
             Navigation.PushAsync(new infoShipTrip(Ships[buttons.IndexOf((Button)sender)].idnave));
             ShipsInPort.Children.Clear();
             Ships.Remove(Ships[buttons.IndexOf((Button)sender)]);
-            buttons.Remove(buttons[buttons.IndexOf((Button)sender)]);
+            buttons.Clear();
             CreateALreadyExisting();
         }
 
