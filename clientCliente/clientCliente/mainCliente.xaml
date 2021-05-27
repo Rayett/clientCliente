@@ -3,6 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="clientCliente.mainCliente">
     <ContentPage.Content>
-       
+        <AbsoluteLayout>
+            <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
+            AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+            <StackLayout x:Name="mainStackLayout">
+                <Frame BorderColor="Black"
+                     BackgroundColor ="#1C495E"
+                     Margin="-10,-10,-10,30">
+                    <Frame HorizontalOptions="End" 
+                        x:Name="myOrders"
+                        VerticalOptions="Center"
+                        HeightRequest="40"
+                               Margin="0,10,30,0"
+                               Padding="10"
+                        BackgroundColor="#FF6262"
+                        BorderColor="Black"
+                        CornerRadius="15">
+
+
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="myOrderstapped" />
+                        </Frame.GestureRecognizers>
+
+                        <Label Text="I miei ordini" 
+                        MinimumHeightRequest ="25"
+                        TextColor="White" 
+                        FontSize="20"
+                        Margin="5"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"/>
+                    </Frame>
+                </Frame>
+                <ScrollView>
+                    <Grid x:Name="mainGridLayout">
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
+
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

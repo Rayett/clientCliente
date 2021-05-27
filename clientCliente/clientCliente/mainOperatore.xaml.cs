@@ -31,7 +31,7 @@ namespace clientCliente
 
         private void NewuserTapped(object sender, EventArgs e)
         {
-            //Navigation.PushAsync();
+            Navigation.PushAsync(new newAccount());
         }
 
         private void NewShipTapped(object sender, EventArgs e)
