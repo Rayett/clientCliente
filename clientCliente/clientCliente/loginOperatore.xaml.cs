@@ -31,7 +31,7 @@ namespace clientCliente
             {
                 string app;
                 displayError.IsVisible = false;
-                Task<string> task = RestService.get("/login?type=operatore&name=" + nome.Text + "&surname=" + cognome.Text + "&password=" + password.Text);
+                Task<string> task = RestService.get("/login?type=operatore&name=" + nome.Text + "&surname=" + cognome.Text + "&password=" + Misc.MD5Hash(password.Text));
                 Console.WriteLine("\n\nbased " + task.Result);
                 if (task.Result == "err 204")
                 {

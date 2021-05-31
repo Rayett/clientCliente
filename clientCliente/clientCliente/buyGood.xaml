@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="clientCliente.buyGood">
+    <ContentPage.Content>
+    <AbsoluteLayout>
+        <Image Aspect="AspectFill" RotationY="180" Source="bg.jpg"
+            AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+            <AbsoluteLayout>
+                <Label x:Name="displayError" IsVisible="false" 
+                    Text="Credenziali sbagliate"
+                    WidthRequest="300"
+                    Margin="0,70,0,0"
+                    TextColor="OrangeRed" 
+                    FontSize="20"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+            </AbsoluteLayout>
+
+            <Label Text="Quantitá"
+                        Margin="80,20,0,0 "
+                        TextColor="White" 
+                        FontSize="20"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Start"/>
+                <Entry x:Name="quantity"  Keyboard="Numeric" Placeholder="Quantitá" HorizontalTextAlignment="Start" Margin="80,10"/>
+
+
+            <Label Text="Porto di ritiro"
+                        Margin="80,20,0,0 "
+                        TextColor="White" 
+                        FontSize="20"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Start"/>
+
+            <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Picker x:Name="state" SelectedIndexChanged="stateChanged"
+                                    Grid.Row="0" Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Start"
+                                    WidthRequest="150"
+                                    Margin="65,10,0,0 "
+                                    Title="Stato" >
+                        <Picker.Items>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Picker x:Name="city"
+                                    Grid.Row="0" Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    HorizontalTextAlignment="Start"
+                                    WidthRequest="150"
+                                    Margin="0,10,80,0 "
+                                    Title="Città">
+                        <Picker.Items>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+                <Frame HorizontalOptions="Fill" 
+                x:Name="delAccounttapped"
+                VerticalOptions="Center"
+                HeightRequest="25"
+                       Margin="70,20"
+                BackgroundColor="#FF6262"
+                BorderColor="Black"
+                CornerRadius="23">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="newPackTapped" />
+                </Frame.GestureRecognizers>
+
+                <Label Text="CONFERMA" 
+                    MinimumHeightRequest ="25"
+                    TextColor="White" 
+                    FontSize="20"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+            </Frame>
+
+
+        </StackLayout>
+    </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

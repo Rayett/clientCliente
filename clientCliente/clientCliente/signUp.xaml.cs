@@ -33,7 +33,7 @@ namespace clientCliente
                 displayError.IsVisible = false;
                 if (password.Text == RipPassword.Text)
                 {
-                    app = "{\"name\":\"" + nome.Text + "\",\"surname\":\"" + cognome.Text + "\",\"password\":\"" + password.Text + "\"}";
+                    app = "{\"name\":\"" + nome.Text + "\",\"surname\":\"" + cognome.Text + "\",\"password\":\"" + Misc.MD5Hash(password.Text) + "\"}";
                     Task<string> task = RestService.post("/signup?type=cliente", app);
                     Console.WriteLine("\n\nbased " + task.Result);
                     if (task.Result == "err 204")
@@ -44,7 +44,7 @@ namespace clientCliente
                     }
                     else
                     {
-                        task = RestService.get("/login?type=cliente&name=" + nome.Text + "&surname=" + cognome.Text + "&password=" + password.Text);
+                        task = RestService.get("/login?type=cliente&name=" + nome.Text + "&surname=" + cognome.Text + "&password=" + Misc.MD5Hash(password.Text));
 
                         Misc.id = Convert.ToInt32(task.Result);
                         Console.WriteLine("id = " + Misc.id);

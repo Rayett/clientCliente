@@ -111,6 +111,7 @@ namespace clientCliente
                     HeightRequest = 37,
                 };
                 button.Clicked += suff;
+                buttons.Add(button);
                 mainGridLayout.Children.Add(label, 0, i);
                 mainGridLayout.Children.Add(button, 1, i);
                 i++;

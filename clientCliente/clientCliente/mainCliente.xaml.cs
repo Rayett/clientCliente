@@ -72,12 +72,12 @@ namespace clientCliente
 
         private void suff(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new buyGood());
+            Navigation.PushAsync(new buyGood(Goods[buttons.IndexOf((Button)sender)].idMerce));
         }
 
         private void myOrderstapped(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new myOrders());
+            Navigation.PushAsync(new myOrders());
         }
     }
 }

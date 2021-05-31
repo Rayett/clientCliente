@@ -43,8 +43,8 @@ namespace clientCliente
                 }
                 else
                 {
-                    app = "{\"name\":\"" + nome.Text + "\",\"password\":\"" + password.Text + "\"}";
-                    Task<string> task = RestService.post("/singup?type=fornitore" ,app);
+                    app = "{\"name\":\"" + nome.Text + "\",\"password\":\"" + Misc.MD5Hash(password.Text) + "\"}";
+                    Task<string> task = RestService.post("/signup?type=fornitore", app);
                     displayError.Margin = new Thickness((width - 300) / 2, 70, (width - 300) / 2, 0);
                     displayError.TextColor = Color.DodgerBlue;
                     displayError.Text = "Fornitore aggiunto";
@@ -63,7 +63,7 @@ namespace clientCliente
                 }
                 else
                 {
-                    app = "{\"name\":\"" + nome.Text + "\",\"surname\":\"" + cognome.Text + "\",\"password\":\"" + password.Text + "\",\"idP\":"+ ports[city.SelectedIndex].idP + "}";
+                    app = "{\"name\":\"" + nome.Text + "\",\"surname\":\"" + cognome.Text + "\",\"password\":\"" + Misc.MD5Hash(password.Text) + "\",\"idP\":"+ ports[city.SelectedIndex].idP + "}";
                     Task<string> task = RestService.post("/signup?type=operatore", app);
                     displayError.Margin = new Thickness((width - 300) / 2, 70, (width - 300) / 2, 0);
                     displayError.TextColor = Color.DodgerBlue;
@@ -82,8 +82,8 @@ namespace clientCliente
                 }
                 else
                 {
-                    app = "{\"name\":\"" + nome.Text + "\",\"surname\":\"" + cognome.Text + "\",\"password\":\"" + password.Text + "\"}";
-                    Task<string> task = RestService.post("/singup?type=autista", app);
+                    app = "{\"name\":\"" + nome.Text + "\",\"surname\":\"" + cognome.Text + "\",\"password\":\"" + Misc.MD5Hash(password.Text)  + "\"}";
+                    Task<string> task = RestService.post("/signup?type=autista", app);
                     displayError.Margin = new Thickness((width - 300) / 2, 70, (width - 300) / 2, 0);
                     displayError.TextColor = Color.DodgerBlue;
                     displayError.Text = "Autotraportatore aggiunto";
